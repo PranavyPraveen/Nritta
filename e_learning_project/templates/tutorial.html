@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block image %}
+
+
+
+<!--<div class="bg-box">-->
+<!--      <img src="{% static 'images/tutorial_bg.jpg' %}" alt="">-->
+<!--    </div>-->
+
+{% endblock %}
+
+
+{% block headerandslider %}
+
+
+{% include 'navbar.html' %}
+
+<div style="margin-left:50px;">
+        {% if tp == 100 %}
+        <a href="{% url 'cpdf' df.id %}"><button class="btn btn-success" type="submit">Course certificate</button></a>
+
+
+        {% else %}
+        <button class="btn btn-secondary" type="submit" disabled>Course certificate</button>
+        {% endif %}
+    </div>
+
+<header>
+    <h1> <span class="text-center" style="background-color:lightblue; color: #000;">{{df.name}} Tutorials</span></h1>
+
+<!--        <span style="background-color:#fff;">-->
+<!--        <h1 style="text-align: center; color: #000;">{{df.name}} Tutorials</h1>-->
+<!--            </span>-->
+    </header>
+
+
+    <div style="margin-left:900px; margin-right:50px;" class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" style="width: {{ tp }}%" >{{ tp }}%</div>
+    </div>
+
+    <div class="container">
+
+    {% if ts %}
+        {% for k in ts %}
+
+        <div class="card mt-1">
+            <img src="{{k.cover_img.url}}"  alt="Dance Tutorial 1">
+            <div class="card-content">
+                <div class="card-title">{{k.name}}</div>
+                <div class="card-description">{{k.description|truncatewords:10}}</div>
+                <a href="{% url 'wt' k.id %}" class="card-link">Watch Video</a>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No Tutorials found</p>
+        {% endif %}
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            background-image: url("/static/images/tutorial_bg1.jpg");
+            background-size : cover;
+            background-repeat : no-repeat;
+        }
+        span {
+            display: table;
+            margin: 0 auto;
+            opacity:0.75;
+}
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .card-description {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .card-link {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+
+
+{% endblock %}
+

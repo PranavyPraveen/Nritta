@@ -1,0 +1,44 @@
+<div class="inputBox">
+                        <label for="cardName">
+                              Name On Card:
+                          </label>
+                        <input type="text" id="cardName"
+                               placeholder="Enter card name"
+                               required value="{{request.user.username}}">
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardNum">
+                              Credit Card Number:
+                          </label>
+                        <input type="text" id="cardNum"
+                               placeholder="1111-2222-3333-4444"
+                               maxlength="19" required name="cn" value="{{card.card_no}}">
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="">Exp Month:</label>
+                        <select name="em" id="">
+                            <option value="{{card.Exp_month}}">{{card.Exp_month}}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="">Exp Year:</label>
+                            <select name="ey" id="">
+                                <option value="{{card.Exp_year}}">{{card.Exp_year}}</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv"
+                                   placeholder="1234" required>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>

@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block headerandslider %}
+{% include 'navbar.html' %}
+
+    <div class="container text-center mt-5 border border-warning rounded">
+
+    <form class="form mt-5 mb-5" method="post">
+        <h3 class="head3 mb-4">Please Enter Your Password!</h3>
+        {% csrf_token %}
+        <label class="label text-danger">New Password:</label><br>
+        <input type="password" placeholder="Enter Password" name="pw1"> <br> <br>
+
+        <label class="label text-danger">Confirm Password:</label><br>
+        <input type="password" placeholder="Confirm Password" name="pw2"><br> <br>
+        <input type="submit">
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nritta Dance Academy - Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .gender-options {
+            display: flex;
+            justify-content: space-between;
+        }
+        .gender-options label {
+            margin-right: 10px;
+        }
+        .gender-options input {
+            margin-right: 5px;
+        }
+        .btn {
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #e67600;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://www.example.com/dance-image.jpg" alt="Dance Academy">
+        </div>
+        <h2>Register at Nritta Dance Academy</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Mobile No.</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="other" required> Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Enter Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="footer">
+            © 2024 Nritta Dance Academy. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

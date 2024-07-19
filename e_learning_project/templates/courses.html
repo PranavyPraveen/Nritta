@@ -1,0 +1,74 @@
+ {% load static %}
+
+  <section class="food_section layout_padding-bottom" style="margin-top:450px;" id="cs">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Courses Available
+        </h2>
+      </div>
+
+<!--      <ul class="filters_menu">-->
+<!--        <li class="active" data-filter="*">All</li>-->
+<!--        <li data-filter=".burger">Burger</li>-->
+<!--        <li data-filter=".pizza">Pizza</li>-->
+<!--        <li data-filter=".pasta">Pasta</li>-->
+<!--        <li data-filter=".fries">Fries</li>-->
+<!--      </ul>-->
+
+     <div class="filters-content">
+    <div class="row grid">
+
+        {% for i in d %}
+        <div class="col-sm-6 col-lg-4 all pizza">
+            <a href="{% url 'tt' i.id %}" style="text-decoration: none; color: inherit;">
+                <div class="box">
+                    <div>
+                        <div style="height: 290px;">
+                            <img src="{{ i.img.url }}" width="400" height="300" alt="">
+                        </div>
+                        <div style="background-color: #442104  ;" class="detail-box">
+                            <h5>
+                                {{ i.name }}
+                            </h5>
+                            <p>
+                                {{ i.description|truncatewords:30 }}
+                            </p>
+                            <div class="">
+                                <h6>
+                                    ₹ {{ i.fees }}
+                                </h6>
+                                <h6><span>{{ i.duration }} Months</span></h6>
+                                <img src="{% static 'images/danceicon.png' %}" height="30" width="30">
+
+<!--   This will dynamically show buy and purchased depending on whether the user has purchased the course or not   -->
+
+                                {% if i.id in sc %}
+                               <a href="{% url 'tt' i.id %}">
+
+                                   <button class="btn btn-success" type="button">Purchased</button>
+                               </a>
+                                {% else %}
+                                <a href="{% url 'sn' %}">
+                                    <button type="button">Buy</button>
+                                    </a>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+      </div>
+      <div class="btn-box ">
+        <a style="color:#fff; background-color: #D08E00 ;" href="">
+          View all
+        </a>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Completion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+             background-color:red;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-style: italic;
+        }
+        .certificate-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            width: 21cm;
+            height: 29.7cm;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .header {
+            padding:0px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sub-header, .content, .footer {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .content strong {
+            font-style: normal;
+            font-weight: bold;
+        }
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .signature div {
+            text-align: center;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            margin-top: 20px;
+            padding-top: 5px;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+        .logo {
+            margin: 0px;
+            padding:0px;
+        }
+        .design {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.5;
+        }
+      .content{
+        padding:0px;
+        margin-left:40px;
+        margin-right:40px;
+      }
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .signature div {
+            text-align: center;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            margin-top: 20px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="watermark">Nritta Academy</div>
+        <div class="logo">
+            <center>
+                <img src="static/images/mynewlogo.png" alt="Nritta Academy Logo" height="200" width="200">
+            </center>
+        </div>
+        <div class="header">Nritta Course Certificate</div>
+
+        <div class="content">
+          <h4>We are proud to announce that</h4>
+          <p>This is to certify that <strong>Mr/Ms {{name}}</strong> completed the <strong>{{course}}</strong> course during the duration <strong>{{dur}} months and {{day}} day</strong>.
+          <i>We wish you all the best for your future endeavors.</i>
+          </p>
+        </div>
+
+        <div class="signature">
+            <div class="text-start">
+                <div class="signature-line"></div>
+                <img src="" alt="Signature" height="50">
+                <h4>Signature</h4>
+
+            </div>
+            <div class="text-end">
+                <div class="signature-line"></div>
+                <img src="" alt="Seal" height="50">
+                <h4>Company Seal</h4>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block image %}
+
+
+<div class="bg-box">
+      <img src="{% static 'images/bg3.png' %}" alt="">
+    </div>
+
+{% endblock %}
+
+{% block headerandslider %}
+
+{% include 'navbar.html' %}
+
+{% include 'carousel.html' %}
+
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'courses.html' %}
+
+{% include 'about.html' %}
+
+{% include 'client.html' %}
+
+{% include 'footer.html' %}
+
+
+{% endblock %}
